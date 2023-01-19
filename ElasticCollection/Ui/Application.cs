@@ -5,35 +5,40 @@ namespace ElasticCollection.Ui
 {
     public class Application
     {
+        public string DisplayOrder()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter the option you would like to see(use space to seperate for multi options)" +
+                " \n" + "1) Id \n" + "2) Name \n" + "3) Quantity \n" + "4) Price \n" + "5) Category \n" + "6) OrderCount" + "  ");
+       return Console.ReadLine();
+        }
 
         public void Run()
         {
-            ElasticCollectionApp.DynamicDisplay();
 
-            /* start: Console.WriteLine("Weclome to our store \n 1) To display all the products \n" +
-                   " 2) To select Order Yourself \n 3) To leave the application");
-                 string choiceOne = Console.ReadLine();
-                 bool isAlive = true;*/
-            /*  while (isAlive)
-              {
+            Console.WriteLine("Weclome to our store ");
+        start: Console.WriteLine("\n 1) To display all the products \n" +
+              " 2) To select Display Order Yourself \n 3) To leave the application");
+            string choiceOne = Console.ReadLine();
+     
                   switch (choiceOne)
                   {
                       case "1":
-
-                          isAlive = false;
-                          break;
-                      case "2":
-                          Console.WriteLine("Pickd 2");
-                          break;
-                      case "3":
+                    Console.Clear();
+                    ElasticCollectionApp.ShowAll();
+                    goto start;
+                case "2":
+                    Console.Clear();
+                    
+                    ElasticCollectionApp.DynamicDisplay(DisplayOrder());
+                  
+                    goto start;
+                case "3":
                           Console.WriteLine("GoodBye");
-                          isAlive = false;
                           break;
                       default:
                           goto start;
-
                   }
-              }*/
         }
     }
 }

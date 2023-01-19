@@ -18,9 +18,9 @@ namespace ElasticCollection.implementation
             }
         }
 
-        public static void DynamicDisplay()
+        public static void DynamicDisplay(string search)
         {
-            string search = "category quantity orderCount";
+   
             dynamic ProductObject = new ExpandoObject();
 
             foreach (Product product in ProductDB.products)
